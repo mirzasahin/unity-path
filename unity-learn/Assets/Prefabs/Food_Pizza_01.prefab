@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6540312500494733412}
   - component: {fileID: 5159033008293118877}
   - component: {fileID: -5296491100581795247}
-  - component: {fileID: -2989106091182453695}
+  - component: {fileID: 3528936202616160873}
   m_Layer: 0
   m_Name: Food_Pizza_01
   m_TagString: Untagged
@@ -161,7 +161,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-2989106091182453695
+--- !u!114 &3528936202616160873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
