@@ -15,14 +15,14 @@ public class NewBehaviourScript : MonoBehaviour
     public float zRangeMax = 15.0f;
     public float zRangeMin = -1;
     public float speed;
-
-
+    private AudioSource audioSource;
     public GameObject projectilePrefab;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +56,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time - lastSpawnTime >= spawnInterval)
         {
+            audioSource.Play();
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
             lastSpawnTime = Time.time;
         }
