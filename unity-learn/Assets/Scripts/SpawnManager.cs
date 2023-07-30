@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
 
     private float spawnRangeX = 15;
     private float maxSpawnRangeY = 15;
-    private float minSpawnRangeY = -1   ;
+    private float minSpawnRangeY = 0;
 
     private float spawnPosZ = 20;
     private float spawnPosX = 22;
