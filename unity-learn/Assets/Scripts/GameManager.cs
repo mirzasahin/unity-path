@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
 {
+    public HealthBar healthBar;
+
+    [SerializeField] private Text scoreText;
     private int score = 0;
-    private int lives = 3;
+    public int maxHealth = 3;
+    public int currentHealth;
+
+
+    public SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -23,21 +32,22 @@ public class GameManager : MonoBehaviour
 
     public void AddLives(int value)
     {
-        lives += value;
+        currentHealth += value;
+        healthBar.SetHealth(currentHealth);
 
-        if (lives <= 0)
+        if (currentHealth <= 0)
         {
             SceneManager.LoadScene("GameOverMenu");
             Debug.Log("Game Over!");
-            lives = 0;
+            currentHealth = 0;
             //Time.timeScale = 0;
         }
-        Debug.Log("Lives = " + lives);
+        Debug.Log("Lives = " + currentHealth);
     }
 
     public void AddScore(int value)
     {
         score += value;
-        Debug.Log("Score = " + score);
+        scoreText.text  = "Score: " + score;
     }
 }
