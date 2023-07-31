@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: " + 0;
+        score = 0;
+        scoreText.text = "Score: " + score;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
