@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public HealthBar healthBar;
 
     [SerializeField] private Text scoreText;
-    private int score = 0;
+    public static int score = 0;
     public int maxHealth = 3;
     public int currentHealth;
 
@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreText.text = "Score: " + 0;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -50,4 +51,6 @@ public class GameManager : MonoBehaviour
         score += value;
         scoreText.text  = "Score: " + score;
     }
+
+   
 }
